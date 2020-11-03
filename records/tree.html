@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Tree</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <!-- <script src="../js/d3.min.js"></script> -->
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <script>
+        // var canvas = d3.select("body").append("svg")
+        //     .attr("width", 500)
+        //     .attr("height", 500);
+
+        //     var diagonal = d3.svg.diagonal()
+        //         .source({x: 10, y: 10})
+        //         .target({x: 300, y: 300});
+
+        //     canvas.append("path")
+        //         .attr("fill", "none")
+        //         .attr("stroke", "black")
+        //         .attr("d", diagonal);
+
+        var canvas = d3.select("body").append("svg")
+            .attr("width", 500)
+            .attr("height", 500)
+            .append("g")
+                .attr("transform", "translate(50, 50");
+
+        var tree = d3.layout.tree()
+            .size([400, 400]);
+
+        d3.json("familytree.json", function (data) {
+
+            var nodes = tree.nodes(data);
+            var links = tree.links(nodes);
+
+            var node = canvas.selectAll(".node")
+                .data(nodes)
+                .enter()
+                .append("g")
+                    .attr("class", "node")
+                    .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
+
+            node.append("circle")
+                .attr("r", 5)
+                .attr("fill", "steelblue");
+
+            node.append("text")
+                .text(function (d) { return d.name })
+
+            var diagonal = d3.svg.diagonal();
+
+            canvas.selectAll(".link")
+                .data(links)
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("fill", "none")
+                .attr("stroke", "#333333")
+                .attr("d", diagonal);
+
+
+
+        })
+    </script>
+
+</body>
+</html>

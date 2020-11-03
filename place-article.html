@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/ico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/ico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/ico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/ico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/ico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/ico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/ico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/ico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/ico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
+	<link rel="manifest" href="img/ico/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/ico/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ვილაიეთის დავთარი</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="js/leaflet/leaflet.css">
+	<script src="js/leaflet/leaflet.js"></script>
+  <script src="js/leaflet-providers.js"></script>
+  <script src='js/leaflet/leaflet.fullscreen.min.js'></script>
+  <link href='js/leaflet/leaflet.fullscreen.css' rel='stylesheet' />
+</head>
+<body class="bg-light-grey">
+
+  <header>
+    <div class="container">
+      
+      <div class="top-part">
+          <div class="logo">
+            <!-- <a href="./"><img src="img/logo-n2.svg" alt="ISU Logo"></a> -->
+          </div>
+          <h1 class="title">
+            გურჯისტანის ვილაიეთის დიდი დავთარი
+            <small>დიგიტალური გამოცემა <span class="version">Vers. 1.0.1</span></small>
+          </h1>
+      </div>
+
+      <hr>
+
+      <div class="bottom-part">
+
+        <nav class="navbar navbar-expand-lg navbar-light primary-menu">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i> <h6 class="d-inline">მენიუ</h6>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./"><i class="fas fa-home"></i> მთავარი <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><i class="fas fa-list"></i> შესახებ</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-list"></i> ნავიგაცია
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="places.html">ადგილები</a>
+                  <a class="dropdown-item active" href="persons.html">პირები</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="publications.html"><i class="fas fa-align-left"></i> პუბლიკაციები</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="glossary.html"><i class="fas fa-book-reader"></i> გლოსარიუმი</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="stata.html"><i class="fas fa-chart-line"></i> სტატისტიკა</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item eng">
+                <a href="search.html" class="nav-item" data-toggle="modal" data-target=".description-eng">ENG</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      </div> <!-- end .bottom-part-->
+    </div> <!-- end .container -->
+  </header>
+
+  <div class="container">
+    <div class="main">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="d-flex justify-content-between">
+            
+            <h2>რეგისტრირებული ადგილი: უდის ციხის რაბათი</h2>
+            
+            <button class="btn btn-primary rounded-0 d-print-none sm-dev-none" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-cogs"></i>
+            </button>
+            <div class="dropdown-menu export-controll d-print-none">
+              <button type="button" class="btn btn-link u-none d-block" onclick="copyToClipboard('#current-url')">
+                <i class="fas fa-link"></i> Permalink
+              </button>
+              <button type="button" class="btn btn-link u-none d-block" onclick="emailCurrentPage()" title="Send by mail">
+                <i class="far fa-envelope"></i> Email
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div id="articleMap" class="article-map"></div>
+            <script src="records/articlemap.js"></script>
+        </div>
+        <div class="col-lg-12">
+            <dl class="row article-list">
+                <dt class="col-lg-4">ID</dt>
+                <dd class="col-lg-8">627</dd>
+                <dt class="col-lg-4">კოორდინატები</dt>
+                <dd class="col-lg-8">40.912611, 42.700252</dd>
+                <dt class="col-lg-4">სანჯაყი</dt>
+                <dd class="col-lg-8">
+                    <a href="places.html">ახალციხის ლივა</a>
+                </dd>
+                <dt class="col-lg-4">ნაჰიე</dt>
+                <dd class="col-lg-8">
+                    <a href="places.html">უდის რაიონი</a>
+                </dd>
+                <dt class="col-lg-4">სახლების რაოდენობა</dt>
+                <dd class="col-lg-8"></dd>
+                <dt class="col-lg-4">სოფლის მაცხოვრებლები</dt>
+                <dd class="col-lg-8">
+                    <div class="separator">
+                        <ul>
+                            <li><a href="person-article.html">როსაფ</a></li>
+                            <li><a href="person-article.html">ზურაბ</a></li>
+                            <li><a href="person-article.html">ბატატა</a></li>
+                            <li><a href="person-article.html">ფირალი</a></li>
+                            <li><a href="person-article.html">პაპუნა</a></li>
+                            <li><a href="person-article.html">ვარძელ</a></li>
+                            <li><a href="person-article.html">ბენა</a></li>
+                            <li><a href="person-article.html">მასურ</a></li>
+                            <li><a href="person-article.html">ზურაბ</a></li>
+                            <li><a href="person-article.html">იონა</a></li>
+                            <li><a href="person-article.html">ზურაბ</a></li>
+                            <li><a href="person-article.html">მირარსლან</a></li>
+                            <li><a href="person-article.html">ამოონ</a></li>
+                            <li><a href="person-article.html">ამინადალ</a></li>
+                            <li><a href="person-article.html">ბადირხან</a></li>
+                            <li><a href="person-article.html">იმარინდო</a></li>
+                            <li><a href="person-article.html">ელია</a></li>
+                            <li><a href="person-article.html">პაპუნა</a></li>
+                            <li><a href="person-article.html">დოვლათიარ</a></li>
+                            <li><a href="person-article.html">ზუბელ</a></li>
+                            <li><a href="person-article.html">ზუბელ</a></li>
+                            <li><a href="person-article.html">მიქენდერ</a></li>
+                            <li><a href="person-article.html">ყუზან</a></li>
+                            <li><a href="person-article.html">დავით</a></li>
+                            <li><a href="person-article.html">მასურ</a></li>
+                            <li><a href="person-article.html">როსტევან</a></li>
+                            <li><a href="person-article.html">პაპუნა</a></li>
+                            <li><a href="person-article.html">მანველ</a></li>
+                            <li><a href="person-article.html">ბატატა</a></li>
+                            <li><a href="person-article.html">მიჰრან</a></li>
+                            <li><a href="person-article.html">მამუკა</a></li>
+                            <li><a href="person-article.html">კაკუჩა</a></li>
+                            <li><a href="person-article.html">ბატატა</a></li>
+                            <li><a href="person-article.html">ბაინდურ</a></li>
+                            <li><a href="person-article.html">ყარა</a></li>
+                            <li><a href="person-article.html">ამირან</a></li>
+                            <li><a href="person-article.html">მასურ</a></li>
+                            <li><a href="person-article.html">ვარძელ</a></li>
+                            <li><a href="person-article.html">მიჰრან</a></li>
+                            <li><a href="person-article.html">ბატატა</a></li>
+                            <li><a href="person-article.html">დათუნა</a></li>
+                            <li><a href="person-article.html">ყაზა</a></li>
+                            <li><a href="person-article.html">ელია</a></li>
+                            <li><a href="person-article.html">ზერეკ</a></li>
+                            <li><a href="person-article.html">კაკუჩა</a></li>
+                            <li><a href="person-article.html">ხახუტა</a></li>
+                            <li><a href="person-article.html">ზუბელ</a></li>
+                            <li><a href="person-article.html">პაპუნა</a></li>
+                            <li><a href="person-article.html">ასვატურ</a></li>
+                            <li><a href="person-article.html">მღვდელი</a></li>
+                            <li><a href="person-article.html">იოსაფ</a></li>
+                            <li><a href="person-article.html">სიმონ</a></li>
+                            <li><a href="person-article.html">ყანდუია</a></li>
+                            <li><a href="person-article.html">კაკა</a></li>
+                            <li><a href="person-article.html">შირინა</a></li>
+                            <li><a href="person-article.html">ვარძელ</a></li>
+                            <li><a href="person-article.html">ბარათა</a></li>
+                            <li><a href="person-article.html">მასურა</a></li>
+                            <li><a href="person-article.html">გრიგოლ</a></li>
+                            <li><a href="person-article.html">აზარა</a></li>
+                            <li><a href="person-article.html">ანანია</a></li>
+                            <li><a href="person-article.html">ბიძინა</a></li>
+                            <li><a href="person-article.html">ზოსიმე</a></li>
+                            <li><a href="person-article.html">ბადუჩა</a></li>
+                            <li><a href="person-article.html">ზურაბ</a></li>
+                            <li><a href="person-article.html">ბენა</a></li>
+                            <li><a href="person-article.html">მანველ</a></li>
+                            <li><a href="person-article.html">მანველ</a></li>
+                            <li><a href="person-article.html">მირველი</a></li>
+                            <li><a href="person-article.html">შირინ</a></li>
+                            <li><a href="person-article.html">ნარინბეგ</a></li>
+                            <li><a href="person-article.html">შირინ</a></li>
+                            <li><a href="person-article.html">ისქენდერ</a></li>
+                            <li><a href="person-article.html">ამირან</a></li>
+                            <li><a href="person-article.html">მანასე</a></li>
+                            <li><a href="person-article.html">ნუქაფ</a></li>
+                            <li><a href="person-article.html">ვარძელ</a></li>
+                            <li><a href="person-article.html">უღულა</a></li>
+                            <li><a href="person-article.html">ვასილი</a></li>
+                            <li><a href="person-article.html">ზურაბა</a></li>
+                            <li><a href="person-article.html">გიორგი</a></li>
+                            <li><a href="person-article.html">გიორგი</a></li>
+                            <li><a href="person-article.html">მანველ</a></li>
+                            <li><a href="person-article.html">ტერაკოფ</a></li>
+                            <li><a href="person-article.html">ანანია</a></li>
+                            <li><a href="person-article.html">გოგიჩა</a></li>
+                            <li><a href="person-article.html">მურვან</a></li>
+                            <li><a href="person-article.html">შაჰმირან</a></li>
+                            <li><a href="person-article.html">ხოჯა</a></li>
+                            <li><a href="person-article.html">ხოჯა</a></li>
+                            <li><a href="person-article.html">ელია</a></li>
+                            <li><a href="person-article.html">იაკობ</a></li>
+                            <li><a href="person-article.html">ილარიონ</a></li>
+                            <li><a href="person-article.html">ზაქარა</a></li>
+                            <li><a href="person-article.html">მაზანა</a></li>
+                            <li><a href="person-article.html">გოგიჩა</a></li>
+                            <li><a href="person-article.html">ნურაზიზ</a></li>
+                            <li><a href="person-article.html">გულაბა</a></li>
+                            <li><a href="person-article.html">ნარინბეგ</a></li>
+                            <li><a href="person-article.html">ნურალი</a></li>
+                            <li><a href="person-article.html">კაკალა</a></li>
+                            <li><a href="person-article.html">ბატატა</a></li>
+                            <li><a href="person-article.html">ასვატურ</a></li>
+                            <li><a href="person-article.html">გრიგოლ</a></li>
+                            <li><a href="person-article.html">ნურალი</a></li>
+                            <li><a href="person-article.html">მამუკა</a></li>
+                            <li><a href="person-article.html">ბენა</a></li>
+                            <li><a href="person-article.html">შაჰყუბად</a></li>
+                            <li><a href="person-article.html">ასვატურ</a></li>
+                            <li><a href="person-article.html">ხაჩატურ</a></li>
+                            <li><a href="person-article.html">პაპუ</a></li>
+                            <li><a href="person-article.html">ყანდუა</a></li>
+                            <li><a href="person-article.html">კაკალა</a></li>
+                            <li><a href="person-article.html">პაპუა</a></li>
+                            <li><a href="person-article.html">ყადუა</a></li>
+                            <li><a href="person-article.html">აზარა</a></li>
+                            <li><a href="person-article.html">მამუკა</a></li>
+                            <li><a href="person-article.html">ასვატურ</a></li>
+                            <li><a href="person-article.html">დემეტრე</a></li>
+                            <li><a href="person-article.html">ქრისტესა</a></li>
+                            <li><a href="person-article.html">ვარძელ</a></li>
+                            <li><a href="person-article.html">აღდგომელ</a></li>
+                            <li><a href="person-article.html">ღარიბა</a></li>
+                            <li><a href="person-article.html">ოთარა</a></li>
+                            <li><a href="person-article.html">ვარძელ</a></li>
+                            <li><a href="person-article.html">გოგინა</a></li>
+                            <li><a href="person-article.html">რევაზ</a></li>
+                            <li><a href="person-article.html">როსტევან</a></li>
+                            <li><a href="person-article.html">გოგიჩა</a></li>
+                            <li><a href="person-article.html">გოგიჩა</a></li>
+                            <li><a href="person-article.html">ელია</a></li>
+                            <li><a href="person-article.html">გოგიჩა</a></li>
+                            <li><a href="person-article.html">გოგიჩა</a></li>
+                        </ul>
+                    </div>
+                </dd>
+                <dt class="col-lg-4">ნახსენები პირები</dt>
+                <dd class="col-lg-8">
+                    <div class="separator">
+                        <ul>
+                            <li><a href="person-article.html">უსარი</a></li>
+                            <li><a href="person-article.html">ყუბადი</a></li>
+                            <li><a href="person-article.html">მირიჯანი</a></li>
+                            <li><a href="person-article.html">ბუდახა</a></li>
+                            <li><a href="person-article.html">გრამტანი</a></li>
+                            <li><a href="person-article.html">მირარსლანი</a></li>
+                            <li><a href="person-article.html">ჯირო</a></li>
+                            <li><a href="person-article.html">ასითა</a></li>
+                            <li><a href="person-article.html">ასითა</a></li>
+                            <li><a href="person-article.html">ყუზანა</a></li>
+                            <li><a href="person-article.html">ტატიკი</a></li>
+                            <li><a href="person-article.html">ტატიკი</a></li>
+                            <li><a href="person-article.html">ვართია</a></li>
+                            <li><a href="person-article.html">ვართია</a></li>
+                            <li><a href="person-article.html">ყარა</a></li>
+                            <li><a href="person-article.html">არიდანი</a></li>
+                            <li><a href="person-article.html">საღა</a></li>
+                            <li><a href="person-article.html">ჭანი</a></li>
+                            <li><a href="person-article.html">ყუზანა</a></li>
+                            <li><a href="person-article.html">ჭანი</a></li>
+                            <li><a href="person-article.html">ნუქაფი</a></li>
+                            <li><a href="person-article.html">საგინა</a></li>
+                            <li><a href="person-article.html">კვინიკა</a></li>
+                            <li><a href="person-article.html">სავი</a></li>
+                            <li><a href="person-article.html">შერგილი</a></li>
+                            <li><a href="person-article.html">ყარაოღლანი</a></li>
+                            <li><a href="person-article.html">ამირანი</a></li>
+                            <li><a href="person-article.html">მურადი</a></li>
+                            <li><a href="person-article.html">გელაზარი</a></li>
+                            <li><a href="person-article.html">ზოტიკა</a></li>
+                            <li><a href="person-article.html">ალადანი</a></li>
+                            <li><a href="person-article.html">ყალამი</a></li>
+                            <li><a href="person-article.html">ასითა</a></li>
+                            <li><a href="person-article.html">აღლამი</a></li>
+                            <li><a href="person-article.html">ნუქაფი</a></li>
+                            <li><a href="person-article.html">უფლისა</a></li>
+                            <li><a href="person-article.html">ბაქარშაჰი</a></li>
+                            <li><a href="person-article.html">შაჰმირანი</a></li>
+                            <li><a href="person-article.html">აზარია</a></li>
+                            <li><a href="person-article.html">მოღურავი</a></li>
+                            <li><a href="person-article.html">იაკობი</a></li>
+                            <li><a href="person-article.html">დეკანოზი</a></li>
+                            <li><a href="person-article.html">ბუდახა</a></li>
+                            <li><a href="person-article.html">მათათა</a></li>
+                            <li><a href="person-article.html">იოსიტა</a></li>
+                            <li><a href="person-article.html">ემანეთი</a></li>
+                            <li><a href="person-article.html">ანტონი</a></li>
+                            <li><a href="person-article.html">ნურაზიზი</a></li>
+                            <li><a href="person-article.html">აღდარი</a></li>
+                            <li><a href="person-article.html">მურადი</a></li>
+                            <li><a href="person-article.html">სარგიზი</a></li>
+                            <li><a href="person-article.html">შაჰყული</a></li>
+                            <li><a href="person-article.html">ატოლი</a></li>
+                            <li><a href="person-article.html">გოგინა</a></li>
+                            <li><a href="person-article.html">ჭანი</a></li>
+                            <li><a href="person-article.html">ჭანი</a></li>
+                            <li><a href="person-article.html">ქიტა</a></li>
+                            <li><a href="person-article.html">ხატისა</a></li>
+                            <li><a href="person-article.html">სინანა</a></li>
+                            <li><a href="person-article.html">ნათენა</a></li>
+                            <li><a href="person-article.html">სატალა</a></li>
+                            <li><a href="person-article.html">შავთვალა</a></li>
+                        </ul>
+                    </div>
+                </dd>
+                <dt class="col-lg-4">გადასახადები</dt>
+                <dd class="col-lg-8">
+                    <div class="table-responsive">
+                        <table class="table table-hover" id="mytable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">გადასახადის ტიპი</th>
+                                    <th scope="col">ერთეული</th>
+                                    <th scope="col">რ/მ</th>
+                                    <th scope="col">ახჩა</th>
+                                    <th scope="col">
+                                      <button class="btn m-0 p-0" title="მონაცემების ექსპორტი"><i class="far fa-file-excel"></i></button>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><a href="#">ისფენჯი</a></th>
+                                    <td>კაცი</td>
+                                    <td>135</td>
+                                    <td>3375</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ბოსტანზე</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td>150</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ხორბალი</th>
+                                    <td>ქილა</td>
+                                    <td>800</td>
+                                    <td>9600</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ჭვავი</th>
+                                    <td>ქილა</td>
+                                    <td>100</td>
+                                    <td>1000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ქერი</th>
+                                    <td>ქილა</td>
+                                    <td>1000</td>
+                                    <td>10000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">შირა</th>
+                                    <td>მანი</td>
+                                    <td>30</td>
+                                    <td>240</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">იონჯა და თივა</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td>150</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">სკა</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td>150</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">თაფუ და დეშთიბანი</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td>300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="col-lg-12">
+            <div class="cite d-print-none">
+                <p><strong>ციტირება:</strong>გურჯისტანის ვილაიეთის დიდი დავთარი. დიგიტალური გამოცემა. 2019. 
+                ილიას სახელმწიფო უნივერსიტეტის ლინგვისტურ კვლევათა ინსტიტუტი. 
+                ადგილის ID <span id="place-id">627</span>. ხელმისაწვდომია: <span id="current-url"></span> 
+                წვდომის თარიღი: <span id="current-date"></span></p>
+            </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div> <!-- end .main -->
+  </div> <!-- end .container -->
+
+  <footer>
+    <span id="current-url" class="d-none"></span>
+    <span id="current-date" class="d-none"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 footer-left">
+          <div class="logos">
+            <a href="./"><img src="img/header-logo.svg" alt="ISU Logo" title="ISU" class="isu-footer-logo"></a>
+            <a href="#"><img src="img/dh-logo.png" alt="DH ISU" title="DH Lab ISU" class="dh-footer-logo"></a>
+          </div>
+          <div class="footer-menu">
+          </div>
+        </div>
+        <div class="col-lg-7 footer-right">
+          <p>&copy; 2019 <span id="current-date-ft"></span> ილიას სახელმწიფო უნივერსიტეტი, ლინგვისტურ კვლევათა ინსტიტუტი.</p>
+          <p class="address">ქაქუცა ჩოლოყაშვილის გამზირი 3/5. თბილისი, 0162. F კორპუსი, ოთახი ---.</p>
+          <p class="developed">Designed, developed, and maintained by <a href="#">ISU DH Lab</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ENG MODAL -->
+  <div class="modal fade description-eng" tabindex="-1" role="dialog" aria-labelledby="description-eng" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="description-eng-title">About the Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quod itaque fugiat ut eius magni, dolores repellat provident sed odit aliquam saepe earum enim? Expedita minima voluptatibus ipsa illum nobis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste reiciendis distinctio placeat ullam, vitae quibusdam eaque quaerat id? Nobis alias consequuntur doloribus velit amet inventore adipisci molestias minima itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat perspiciatis soluta vitae fugiat voluptates doloremque, recusandae quae! Modi ducimus quam rerum iusto. Exercitationem veritatis deleniti quaerat optio iste at iure!</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum id corporis non voluptates sapiente excepturi, obcaecati ducimus commodi cumque, ullam ut ipsum officia quis illo reprehenderit libero atque pariatur expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto vitae perferendis hic earum nam facilis porro. Voluptatibus repudiandae minima culpa itaque! Corporis nesciunt repellendus tempora iste ex autem provident?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde quis sint nesciunt veniam quia molestiae officia, pariatur quam vitae repellat ipsum, sed perferendis rerum incidunt, consequuntur excepturi cum dicta facilis.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quisquam placeat magnam pariatur, quae aliquam reprehenderit totam, excepturi, optio aliquid ipsam esse quaerat? Maxime quas facilis eos voluptatibus aspernatur eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis totam illo harum amet laborum alias fugiat assumenda ut odio natus quos quia, in quidem repellat atque non porro. Cupiditate, ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quas necessitatibus veritatis. Quis sapiente reiciendis, accusamus ex, eaque vel sit ducimus velit magni eum laboriosam voluptas id aliquam dolor itaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit optio vero laborum eius ab quis et officia exercitationem ex! Explicabo necessitatibus tempore nobis omnis totam consequuntur pariatur dolor, ipsa molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, corporis molestias assumenda sint dolor earum cupiditate quia. Provident quidem enim impedit sequi rerum consectetur ipsam autem? Minus voluptate velit porro.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero in, porro ratione ex animi iusto hic minus commodi cumque soluta provident dignissimos, dolor nesciunt beatae ab cum atque laborum fuga. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, magnam minus. Veritatis consequatur at illo neque enim. Esse iusto, incidunt fuga voluptatibus recusandae error quae nam maiores, soluta aliquid pariatur.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum harum saepe autem, dolore numquam porro nemo laudantium, aliquid aliquam corporis debitis molestiae neque odit sunt nulla. Ipsum eos ratione dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore maiores deserunt, esse sequi numquam vitae est necessitatibus sed dignissimos laborum ab labore? Accusantium ex deserunt esse tempora possimus labore officiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est tempore, deserunt voluptatum distinctio nulla nemo id vitae dolore autem quasi iste minus reiciendis, cumque officia neque qui quos atque voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore fuga nemo hic nostrum sequi deserunt accusantium dignissimos id vel eius at commodi, consectetur nam ex harum eaque, facilis veniam nobis!</p>
+        </div>
+        <div class="modal-footer bg-primary">
+          <div class="left-side">
+            <img src="img/header-logo.svg" alt="Ilia State University">
+            <img src="img/dh-logo.png" alt="DH Lab @ISU">
+          </div>
+          <div class="right-side">
+            Ilia State University
+            <br>
+            Institute of Linguistic Stadies
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/index.js"></script>
+
+
+
+</body>
+</html>

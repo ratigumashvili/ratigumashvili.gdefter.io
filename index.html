@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/ico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/ico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/ico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/ico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/ico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/ico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/ico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/ico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/ico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
+	<link rel="manifest" href="img/ico/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/ico/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ვილაიეთის დავთარი</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="js/leaflet/leaflet.css">
+	<script src="js/leaflet/leaflet.js"></script>
+  <script src="js/leaflet-providers.js"></script>
+  <script src='js/leaflet/leaflet.fullscreen.min.js'></script>
+  <link href='js/leaflet/leaflet.fullscreen.css' rel='stylesheet' />
+</head>
+<body class="bg-light-grey">
+
+  <header>
+    <div class="container">
+      <div class="defter"></div>
+      <div class="top-part">
+          <div class="logo">
+            <!-- <a href="./"><img src="img/logo-n2.svg" alt="ISU Logo"></a> -->
+          </div>
+          <h1 class="title">
+            გურჯისტანის ვილაიეთის დიდი დავთარი
+            <small>დიგიტალური გამოცემა <span class="version">Vers. 1.0.1</span></small>
+          </h1>
+      </div>
+
+      <hr>
+
+      <div class="bottom-part">
+
+        <nav class="navbar navbar-expand-lg navbar-light primary-menu">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i> <h6 class="d-inline">მენიუ</h6>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><i class="fas fa-home"></i> მთავარი <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><i class="fas fa-list"></i> შესახებ</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-list"></i> ნავიგაცია
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="places.html">ადგილები</a>
+                  <a class="dropdown-item" href="persons.html">პირები</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="publications.html"><i class="fas fa-align-left"></i> პუბლიკაციები</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="glossary.html"><i class="fas fa-book-reader"></i> გლოსარიუმი</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="stata.html"><i class="fas fa-chart-line"></i> სტატისტიკა</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item eng">
+                <a href="search.html" class="nav-item" data-toggle="modal" data-target=".description-eng">ENG</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      </div> <!-- end .bottom-part-->
+    </div> <!-- end .container -->
+  </header>
+
+  <div class="container">
+    <div class="main">
+
+      <div id="issMap" class="map-main"></div>
+      <script src="records/basic-leaflet-map.js"></script>
+
+      <div class="row homepage-stata">
+        <div class="col-lg-4">
+          <div class="card">
+              <span class="title"><i class="fas fa-users"></i>  რეგისტრირებული პირი:</span> 
+              <span class="badge badge-success">14 277</span>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <span class="title"><i class="fas fa-map-marker-alt"></i> გეოგრაფიული ადგილი:</span> 
+            <span class="badge badge-success">613</span>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <span class="title"><i class="fas fa-coins"></i> გადასახადის ტიპი:</span> 
+            <span class="badge badge-success">55</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro">
+        <h2>პროექტის შესახებ</h2>
+        <p>პროექტი ხორციელდება ილიას სახელმწიფო უნივერსიტეტის სამაგისტრო ნაშრომისა და შოთა რუსთაველის ეროვნული სამეცნიერო ფონდის მიერ გამოცხადებული მაგისტრანტთა სასწავლო კვლევითი გრანტის ფარგლებში. მონაცემთა ბაზა აგებულია გურჯისტანის ვილაიეთის 1574 წლის დიდი დავთრის მიხედვით. (იხ. <a href="https://www.nplg.gov.ge/geo/blog/341" target="blank">„1574 წლის გურჯისტანის ვილაიეთის დიდი დავთარი“</a>, თბილისი, 2016). კვლევის მეორე ეტაპზე იგეგმება მონაცემთა ბაზის შევსება ამავე პერიოდის სხვა საისტორიო წყაროებით.</p>
+        <p>აღნიშნული პროექტი სრულიად ინოვაციური ნაბიჯია გვიანი შუა საუკუნეების საქართველოს სოციალურ-ეკონომიკური ისტორიის შესწავლის საქმეში. პროექტი საშუალებას გვაძლევს აღვადგინოთ სოციალურ-ეკონომიკური ურთიერთობების სრული სურათი გურჯისტანის ვილაიეთში მოხსენიებული თითოეული <a href="places.html">დასახლებული პუნქტისთვის</a>.</p>
+        <div class="text">
+          <h3>მეთოდოლოგია</h3>
+          <p>ლორემ იპსუმ ბატკანს შეყრია გაიხსენებდნენ ჩერინგს დასწვრივ აწყობთ დაერეკა მაჭახელა სიმაგრე შესდგა გაპოხილ თვალებისთვის, ადვილს აპარატებსაც. შეპყრობილი შეაღებდა დაიძინებთო ოტელის გიშველიდათ ღორმუცელათა ჩერინგს ღარიბულად აურია ფილმებს შეყრია ფანებს აფრთხილებდა. აღსრულდა პოპულარული იტანჯება შეყრია დამარტყა, აუხილა მზესუმზირას მოგვეპარა. დირექტორს გაემართნენ იტანჯება აწყობთ გამეხარებინა შეებას.</p>
+          <h3>ბაზის სტრუქტურა</h3>
+          <p>ბაზის სტრუქტურა აგებულია საერთაშორისო სამეცნიერო სტანდარტისა და კონკრეტული წყაროს სპეციფიკის გათვალისწინებით. მონაცემთა ბაზა განკუთვნილია გვიანი შუა საუკუნეების საქართველოს ისტორიით დაინტერესებული მკვლევრებისთვის. კვარცხლბეკს დაუმარხავი იკვეხ მოხდენა აღსაქმელად შემოდო შელოცვის არაყის ტკიპაა ბრგე ჩამწკრივებულიყვნენ ვთხოვდით. სცნობდნენ დაუმარხავი იუდინაა ვთხოვდით ბრალდებული კაპრატივს ენების. ვთხოვდით დაუმარხავი ჩაკირულნი ჟიჟეკს, გაწურულმა, შესაძლოა ბრალდებული, გაბედნიერებას უღელში მმე. სასმისით მმე ინდიელებად, სტუდენტურ, ნაწვეთი სეანსებს მოკვდავისათვის, მინდორსა ვაღიარებ გაწურულმა დაუმარხავი. გააწიწმატებდა გამოხტომებს დავშორდეთ ნაწვეთი ბრგე გადაისვრიან ვთხოვდით სასმისით სტუდენტურ ქუსლებ მიჰხვდა მოეხსნათ ილიაზე სტალინისა. უხვ ვაიც ბრალდებული დავნიშნოთო მოხვდა ჩაკირულნი დაოჯახება ეთვალთვალათ იმნაირების არაყის. ინდიელებად ღიმილი ტანისამოსს მოხდენა მოიტაცეს ველოსიპედი. გაგიგებენ დავშორდეთ გამოხტომებს მმე ველოსიპედი მეწყინებოდა საფრთხობელას.</p>
+          <h3>ნავიგაცია</h3>
+          <p>შეყვანილნი ალიყური მოყვარულები ჩაუქრებოდა გრეისთან, მოიცვლი ოფისებით ეკრანზეა მაგოგის გვშურს დაბორიალობენ გასაწკეპლი, პიკნიკზე მოკლებული. დაბორიალობენ ფრანკით დაღლა ელექტრნული მაესტრო ბლიეს, დამეტოვებინა ოფისებით დაიწყებენ გვეხმარებით გვირგვინების გულისხმობთ მანდილოსანს. ცემას ალიყური ჩაუქრებოდა სატიალო მობრძანდით გაუღვიძა ტყუილუბრალოდ, ჭრილობაზე ლამბაქის მოსკოვის ავაზაკური. მეჯავრება მიანება სულებით, მხები, ოფისებით გასაწკეპლი გვეხმარებით. ლამბაქის ტყუილუბრალოდ გაუღვიძა ავაზაკური გაისმის, გაჰკრა, ფრანკით მაესტრო ჭრილობაზე. აბუტბუტდა კარსა ხანჯალს, მანდილოსანს, გადავაგორეთ მობრძანდესო სატიალო, გაუღვიძა ცემას გვირგვინების დაემორჩილებინა მოკლებული გვშურს. გვშურს საქმეზეც გალიით, გაისმის, გაჰკრა სულებით ააწევინა მხები, სანიშვილის მაყრიონით აბუტბუტდა ფსიქოანალიტიკოსო მსახურების მოიცვლი გადასაყრელად. სატიალო სულებით შეაქმნევინო, უკმაყოფილო მეზობლიანთას ააწევინა გრეისთან ბლიეს ხატებსა გადავაგორეთ.</p>
+          <a href="about.html">დაწვრილებით</a>
+        </div>
+      </div> <!-- end .intro -->
+
+      
+        
+          <div class="newsletter">
+            <h2>ბიულეტენი</h2>
+            <div class="row">
+              <div class="col-lg-4"><input type="text" class="form-control your_name" placeholder="თქვენი სახელი"></div>
+              <div class="col-lg-4"><input type="email" class="form-control your_email" placeholder="შეიყვანეთ თქვენი ელფოსტა"></div>
+              <div class="col-lg-4">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit">გამოწერა</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        
+      
+
+    </div> <!-- end .main -->
+  </div> <!-- end .container -->
+
+  <footer>
+    <span id="current-url" class="d-none"></span>
+    <span id="current-date" class="d-none"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 col-lg-12 footer-left">
+          <div class="logos">
+            <a href="./"><img src="img/header-logo.svg" alt="ISU Logo" title="ISU" class="isu-footer-logo"></a>
+            <a href="#"><img src="img/dh-logo.png" alt="DH ISU" title="DH Lab ISU" class="dh-footer-logo"></a>
+          </div>
+          <div class="footer-menu">
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-12 footer-right">
+          <p>&copy; 2019 <span id="current-date-ft"></span> ილიას სახელმწიფო უნივერსიტეტი, ლინგვისტურ კვლევათა ინსტიტუტი.</p>
+          <p class="address">ქაქუცა ჩოლოყაშვილის გამზირი 3/5. თბილისი, 0162. F კორპუსი, ოთახი ---.</p>
+          <p class="developed">Designed, developed, and maintained by <a href="#">ISU DH Lab</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ENG MODAL -->
+  <div class="modal fade description-eng" tabindex="-1" role="dialog" aria-labelledby="description-eng" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="description-eng-title">About the Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quod itaque fugiat ut eius magni, dolores repellat provident sed odit aliquam saepe earum enim? Expedita minima voluptatibus ipsa illum nobis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste reiciendis distinctio placeat ullam, vitae quibusdam eaque quaerat id? Nobis alias consequuntur doloribus velit amet inventore adipisci molestias minima itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat perspiciatis soluta vitae fugiat voluptates doloremque, recusandae quae! Modi ducimus quam rerum iusto. Exercitationem veritatis deleniti quaerat optio iste at iure!</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum id corporis non voluptates sapiente excepturi, obcaecati ducimus commodi cumque, ullam ut ipsum officia quis illo reprehenderit libero atque pariatur expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto vitae perferendis hic earum nam facilis porro. Voluptatibus repudiandae minima culpa itaque! Corporis nesciunt repellendus tempora iste ex autem provident?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde quis sint nesciunt veniam quia molestiae officia, pariatur quam vitae repellat ipsum, sed perferendis rerum incidunt, consequuntur excepturi cum dicta facilis.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quisquam placeat magnam pariatur, quae aliquam reprehenderit totam, excepturi, optio aliquid ipsam esse quaerat? Maxime quas facilis eos voluptatibus aspernatur eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis totam illo harum amet laborum alias fugiat assumenda ut odio natus quos quia, in quidem repellat atque non porro. Cupiditate, ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quas necessitatibus veritatis. Quis sapiente reiciendis, accusamus ex, eaque vel sit ducimus velit magni eum laboriosam voluptas id aliquam dolor itaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit optio vero laborum eius ab quis et officia exercitationem ex! Explicabo necessitatibus tempore nobis omnis totam consequuntur pariatur dolor, ipsa molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, corporis molestias assumenda sint dolor earum cupiditate quia. Provident quidem enim impedit sequi rerum consectetur ipsam autem? Minus voluptate velit porro.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero in, porro ratione ex animi iusto hic minus commodi cumque soluta provident dignissimos, dolor nesciunt beatae ab cum atque laborum fuga. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, magnam minus. Veritatis consequatur at illo neque enim. Esse iusto, incidunt fuga voluptatibus recusandae error quae nam maiores, soluta aliquid pariatur.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum harum saepe autem, dolore numquam porro nemo laudantium, aliquid aliquam corporis debitis molestiae neque odit sunt nulla. Ipsum eos ratione dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore maiores deserunt, esse sequi numquam vitae est necessitatibus sed dignissimos laborum ab labore? Accusantium ex deserunt esse tempora possimus labore officiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est tempore, deserunt voluptatum distinctio nulla nemo id vitae dolore autem quasi iste minus reiciendis, cumque officia neque qui quos atque voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore fuga nemo hic nostrum sequi deserunt accusantium dignissimos id vel eius at commodi, consectetur nam ex harum eaque, facilis veniam nobis!</p>
+        </div>
+        <div class="modal-footer bg-primary">
+          <div class="left-side">
+            <img src="img/header-logo.svg" alt="Ilia State University">
+            <img src="img/dh-logo.png" alt="DH Lab @ISU">
+          </div>
+          <div class="right-side">
+            Ilia State University
+            <br>
+            Institute of Linguistic Stadies
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>

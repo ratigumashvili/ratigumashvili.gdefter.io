@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/ico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/ico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/ico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/ico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/ico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/ico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/ico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/ico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/ico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
+	<link rel="manifest" href="img/ico/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/ico/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ვილაიეთის დავთარი</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="js/leaflet/leaflet.css">
+	<script src="js/leaflet/leaflet.js"></script>
+  <script src="js/leaflet-providers.js"></script>
+  <script src='js/leaflet/leaflet.fullscreen.min.js'></script>
+  <link href='js/leaflet/leaflet.fullscreen.css' rel='stylesheet' />
+</head>
+<body class="bg-light-grey">
+
+  <header>
+    <div class="container">
+      
+      <div class="top-part">
+          <div class="logo">
+            <!-- <a href="./"><img src="img/logo-n2.svg" alt="ISU Logo"></a> -->
+          </div>
+          <h1 class="title">
+            გურჯისტანის ვილაიეთის დიდი დავთარი
+            <small>დიგიტალური გამოცემა <span class="version">Vers. 1.0.1</span></small>
+          </h1>
+      </div>
+
+      <hr>
+
+      <div class="bottom-part">
+
+        <nav class="navbar navbar-expand-lg navbar-light primary-menu">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i> <h6 class="d-inline">მენიუ</h6>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./"><i class="fas fa-home"></i> მთავარი <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><i class="fas fa-list"></i> შესახებ</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-list"></i> ნავიგაცია
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="places.html">ადგილები</a>
+                  <a class="dropdown-item" href="persons.html">პირები</a>
+                </div>
+              </li>
+              <li class="nav-item  active">
+                <a class="nav-link" href="publications.html"><i class="fas fa-align-left"></i> პუბლიკაციები</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="glossary.html"><i class="fas fa-book-reader"></i> გლოსარიუმი</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="stata.html"><i class="fas fa-chart-line"></i> სტატისტიკა</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item eng">
+                <a href="search.html" class="nav-item" data-toggle="modal" data-target=".description-eng">ENG</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      </div> <!-- end .bottom-part-->
+    </div> <!-- end .container -->
+  </header>
+
+  <div class="container">
+    <div class="main">
+     
+        <div class="row blog-article">
+
+            <!-- Blog Entries Column -->
+            <div class="col-lg-8 col-md-12">
+      
+              <div class="d-flex justify-content-between align-items-start">
+            
+                <h2>ეთნიკური შემადგენელი გურჯისტანის ვილაიეთის 1595 წლის დავთრის მიხედვით</h2>
+                
+                <button class="btn btn-primary rounded-0 d-print-none sm-dev-none" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-cogs"></i>
+                </button>
+                <div class="dropdown-menu export-controll d-print-none">
+                  <button type="button" class="btn btn-link u-none d-block" onclick="copyToClipboard('#current-url')">
+                    <i class="fas fa-link"></i> Permalink
+                  </button>
+                  <button type="button" class="btn btn-link u-none d-block" onclick="emailCurrentPage()" title="Send by mail">
+                    <i class="far fa-envelope"></i> Email
+                  </button>
+                </div>
+    
+              </div>
+
+              <hr>
+
+              <div class="meta">
+                <div class="date-holder">გამოქვეყნების თარიღი:<span class="date">1, 2020</span></div>
+                <div class="author-holder">ავტორი:<span class="author">არჩილ თაბუკაშვილი</span></div>
+              </div>
+      
+              <!-- Blog Post -->
+              <div class="card blogpost">
+                <img class="blogpost-header-image card-img-top" src="img/blog/post-header-img.png" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">სახვევს ფიქრობთ მოწყენილობა ჩაუჯდა დათვლილი მოსაწყენ. აძრობდი გულმკვდარო შვერენ შეექცეოდა გადაუფრინო სიჩქარის ჩვენმა ლამაზად ძველია წესისა. მოხუცებულთაგან აცილებს თანახმად ვერაგობისა მოექცეს მიწვა მოსავს, მოუტანია მარხავენ ბევშვებს მეშინოდა ასტრების მდგარა გავიხსენეთ. გულმკვდარო კოლოფებისგან დავთქვათ, ჩვენმა გწყალობდე შვერენ უმიზეზო ხმები. კასეტაზე ზევიდამ მიუძღვენი შეექცეოდა მოსაწყენ, გწყალობდე, მსვლელობაში, მიწვა აცილებს მდგარა ღუმელზე მოსავს.</p>
+                  <p class="card-text">ლორემ იპსუმ შეცდომებით სოროსმა ჩავიყავი, გამოძრომას გამოცხადდებოდი, კარლეტოს ვიმკითხავე ყველანაირად მიქცევაა მანქანიდან გავყვეთ კეთილშობილ. ჯაზში ობიან იგონებენ გასაღებებს მანქანიდან პოსტს, გაჩირაღდნებულს, მკიდია მიგიღებდი, პასტორმა სასიმინდე ქორწინების მოისპო. პოსტს გამოძრომას სამეცნიერო ამაყსა იგონებენ სასიმინდე ქორწინების აიძულა თვლებზე შეცდომებით მუსაიფი ხროვას. საუკეთესო გადაარჩევდა მეთქო გამგონეებს პოსტს, ხელდებული უდიდესმა უჩვენოდ მოისპო განაბეს კარლეტოს ჩხუბისთვისაც შეემოსათ ვამბობდი. ვამბობდი ყმუოდა ხელდებული ჯაზში მიქცევაა, წამოიღო წაწერდა ჭიქითა. გაიარე სასოწარკვეთილ გამოძრომას გასტუმრების აუღელვებლად ყუნწი ხელდებული სცენებია, მოისპო მონროზე ქვრივია მოიტანდე ვამბობდი. იგონებენ გასაღებებს წლისთავზე ჩხუბისთვისაც, ყუნწი, საწყალ, გადახადა პატარძალსავით განაბეს ნომერ.</p>
+                  <img src="img/blog/chart1.jpg" alt="">
+                  <p class="image-cap">შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან მაქსიმალურად მიახლოებული შაბლონი</p>
+                  <p class="card-text">გაძარცვის ყარაულია უწინდებურად გავავსეთ მივლია აღმერთებენ გაგეგონათ ნიროს სახოტბო რამდენიემ მანქანებს გადარჩაო, ჩეპმენის შებინდებამდე. ბიჭვინთაზე გადაფარებული მაწანწალებს ურმით, სცენებს ცხვირსახოცი იმისავით ნიროს, გამობრუნდებოდნენ ყარაულია გიპოვე. კომპარტიას უკლებლად ვეღირსე შევუდგებოდე, მონაწილეობა დავუბრუნდე ძლიერადაც ბობურში, გაზვიადებულმა, დარჩებიანო ქვასთან საცობი იბრძოდი. მაწანწალებს წაერთმიათ გამობრუნდებოდნენ მივლია შეიწუხებთ არაქრისტიანული შფოთვა გადაფარებული, გაგეგონათ მართებს კრიტიკოსს, გავავსეთ მომეშვება. გადარჩაო ჯუზეპე უფრთხილდებოდა ელვას კრიტიკოსს ნახიზნევ გამობრუნდებოდნენ, გაუგებრობა ქვასთან მართებს. დამაცადეთ მმერიკაში მჭერმეტყველების ეპიზოდური რახა კინოკრიტიკის ბურთულები, იმისავით, სახოტბო შემაწვეტინა ბობურში. გავავსეთ მივაკერე სამზადისში, ცხვირსახოცი იღლი გადაუჭირა გაუგებრობა. გიპოვე ტრადიციების განრისხებით, ჩეპმენის მანქანებს იდგებდნენ გადიკრავდა გადაუჭირა სახოტბო წაერთმიათ სამზადისში.</p>
+                  <img src="img/blog/chart2.jpg" alt="">
+                  <p class="image-cap">შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან მაქსიმალურად მიახლოებული შაბლონი</p>
+                  <p class="card-text">ეყოლება სიახლოვემ ჭლექი თქვას, დგომას აჩრდილი, დესპანები, ჯადოსნური სტუმრების მეოთხესაც გავარდა. სააგენტო წითლით ჯიბგირებს მეოთხესაც მეორისაგან აჩონჩხლლი შეუწყნარებელი რეალურ დაგვხვდა გამოჩხრეკილი სკუტერების ღერძს ეჭიკჭიკებაო ქალებისგან მეწყინებოდა. მიღწევაში ფლეიტა სუფთად მეწყინებოდა სწერია იმტვრევდნენ. ჩაიღიმა ჯიბგირებს გვეშინია დროშკის მოწინააღმდეგეს გამწყობილებას. სისხლჭარბიანმა სასტვენი გაგორდა ღერძს საზღვარს, გამაგებინეთ გამოსწორებულიყო რადიოთი. მეხოტბენი დომ ნაპირზე, მოეთხარათ გამწყობილებას გაბედულობას ჯადოსნური. ტურაშვილმა მიღწევაში სკუტერების სისხლჭარბიანმა მოგონებანი კვირაც სადილად აჩონჩხლლი.</p>
+                  
+                  <hr>
+
+                  <div class="tags-holder">
+                    <span>ტეგები:</span>
+                    <ul class="list-unstyled mb-0 tags">
+                        <li>
+                          <a href="#">ვილაიეთი</a>
+                        </li>
+                        <li>
+                          <a href="#">დავთარი</a>
+                        </li>
+                        <li>
+                          <a href="#">ეთნიკური ჯგუფები</a>
+                        </li>
+                        <li>
+                            <a href="#">გადასახადები</a>
+                        </li>
+                        <li>
+                            <a href="#">შუა საუკუნეები</a>
+                        </li>
+                        <li>
+                            <a href="#">ოსმალეთი</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+                  
+            </div>
+      
+            <!-- Sidebar Widgets Column -->
+            <div class="col-lg-4 col-md-12 sidebar">
+      
+              <!-- Search Widget -->
+              <div class="card">
+                <h5 class="card-header">ძებნა</h5>
+                <div class="card-body">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="სახელწოდება">
+                    <span class="input-group-append">
+                      <button class="btn btn-secondary" type="button"><i class="fas fa-search"></i></button>
+                    </span>
+                  </div>
+                </div>
+              </div>              
+      
+              <!-- Side Widget -->
+              <div class="card">
+                <h5 class="card-header">არქივი</h5>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0 archive">
+                        <li><a href="">2019</a></li>
+                        <li><a href="">2020</a></li>
+                    </ul>
+                </div>
+              </div>
+      
+            </div>
+      
+            <div class="col-lg-12">
+                <div class="cite d-print-none">
+                    <p><strong>ციტირება:</strong><span class="author">არჩილ თაბუკაშვილი</span>ეთნიკური შემადგენელი გურჯისტანის ვილაიეთის 1595 წლის დავთრის მიხედვით.                    გურჯისტანის ვილაიეთის დიდი დავთარი. დიგიტალური გამოცემა. 2019. 
+                    ილიას სახელმწიფო უნივერსიტეტის ლინგვისტურ კვლევათა ინსტიტუტი. 
+                    ხელმისაწვდომია: <span id="current-url"></span> 
+                    წვდომის თარიღი: <span id="current-date"></span></p>
+                </div>
+            </div>
+
+        </div> <!-- /.row -->
+    </div> <!-- end .main -->
+  </div> <!-- end .container -->
+
+  <footer>
+    <span id="current-url" class="d-none"></span>
+    <span id="current-date" class="d-none"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 col-lg-12 footer-left">
+          <div class="logos">
+            <a href="./"><img src="img/header-logo.svg" alt="ISU Logo" title="ISU" class="isu-footer-logo"></a>
+            <a href="#"><img src="img/dh-logo.png" alt="DH ISU" title="DH Lab ISU" class="dh-footer-logo"></a>
+          </div>
+          <div class="footer-menu">
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-12 footer-right">
+          <p>&copy; 2019 <span id="current-date-ft"></span> ილიას სახელმწიფო უნივერსიტეტი, ლინგვისტურ კვლევათა ინსტიტუტი.</p>
+          <p class="address">ქაქუცა ჩოლოყაშვილის გამზირი 3/5. თბილისი, 0162. F კორპუსი, ოთახი ---.</p>
+          <p class="developed">Designed, developed, and maintained by <a href="#">ISU DH Lab</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ENG MODAL -->
+  <div class="modal fade description-eng" tabindex="-1" role="dialog" aria-labelledby="description-eng" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="description-eng-title">About the Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quod itaque fugiat ut eius magni, dolores repellat provident sed odit aliquam saepe earum enim? Expedita minima voluptatibus ipsa illum nobis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste reiciendis distinctio placeat ullam, vitae quibusdam eaque quaerat id? Nobis alias consequuntur doloribus velit amet inventore adipisci molestias minima itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat perspiciatis soluta vitae fugiat voluptates doloremque, recusandae quae! Modi ducimus quam rerum iusto. Exercitationem veritatis deleniti quaerat optio iste at iure!</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum id corporis non voluptates sapiente excepturi, obcaecati ducimus commodi cumque, ullam ut ipsum officia quis illo reprehenderit libero atque pariatur expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iusto vitae perferendis hic earum nam facilis porro. Voluptatibus repudiandae minima culpa itaque! Corporis nesciunt repellendus tempora iste ex autem provident?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde quis sint nesciunt veniam quia molestiae officia, pariatur quam vitae repellat ipsum, sed perferendis rerum incidunt, consequuntur excepturi cum dicta facilis.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima quisquam placeat magnam pariatur, quae aliquam reprehenderit totam, excepturi, optio aliquid ipsam esse quaerat? Maxime quas facilis eos voluptatibus aspernatur eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis totam illo harum amet laborum alias fugiat assumenda ut odio natus quos quia, in quidem repellat atque non porro. Cupiditate, ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quas necessitatibus veritatis. Quis sapiente reiciendis, accusamus ex, eaque vel sit ducimus velit magni eum laboriosam voluptas id aliquam dolor itaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit optio vero laborum eius ab quis et officia exercitationem ex! Explicabo necessitatibus tempore nobis omnis totam consequuntur pariatur dolor, ipsa molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, corporis molestias assumenda sint dolor earum cupiditate quia. Provident quidem enim impedit sequi rerum consectetur ipsam autem? Minus voluptate velit porro.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero in, porro ratione ex animi iusto hic minus commodi cumque soluta provident dignissimos, dolor nesciunt beatae ab cum atque laborum fuga. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, magnam minus. Veritatis consequatur at illo neque enim. Esse iusto, incidunt fuga voluptatibus recusandae error quae nam maiores, soluta aliquid pariatur.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum harum saepe autem, dolore numquam porro nemo laudantium, aliquid aliquam corporis debitis molestiae neque odit sunt nulla. Ipsum eos ratione dolorum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore maiores deserunt, esse sequi numquam vitae est necessitatibus sed dignissimos laborum ab labore? Accusantium ex deserunt esse tempora possimus labore officiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est tempore, deserunt voluptatum distinctio nulla nemo id vitae dolore autem quasi iste minus reiciendis, cumque officia neque qui quos atque voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore fuga nemo hic nostrum sequi deserunt accusantium dignissimos id vel eius at commodi, consectetur nam ex harum eaque, facilis veniam nobis!</p>
+        </div>
+        <div class="modal-footer bg-primary">
+          <div class="left-side">
+            <img src="img/header-logo.svg" alt="Ilia State University">
+            <img src="img/dh-logo.png" alt="DH Lab @ISU">
+          </div>
+          <div class="right-side">
+            Ilia State University
+            <br>
+            Institute of Linguistic Stadies
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
